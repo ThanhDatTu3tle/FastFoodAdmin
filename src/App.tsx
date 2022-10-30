@@ -15,7 +15,7 @@ import dataProvider from "@pankod/refine-simple-rest";
 
 import { ProductList } from 'pages/products';
 
-const API_URL = "http://localhost:3001/";
+const API_URL = "http://localhost:3001";
 const App: React.FC = () => {
     return (
         <ThemeProvider theme={LightTheme}>
@@ -27,7 +27,7 @@ const App: React.FC = () => {
                     dataProvider={dataProvider(API_URL)}
                     notificationProvider={notificationProvider}
                     Layout={Layout}
-                    // ReadyPage={ReadyPage}
+                    ReadyPage={ReadyPage}
                     catchAll={<ErrorComponent />}
                     resources={[{ 
                         name: "products", 

@@ -78,7 +78,7 @@ export const ProductList: React.FC = () => {
 
     return (
         <List>
-            <DataGrid {...dataGridProps} columns={columns} pageSize={1} autoHeight />
+            <DataGrid {...dataGridProps} getRowId={(row) => row.maMonAn} columns={columns} autoHeight />
         </List>
     );
 };
