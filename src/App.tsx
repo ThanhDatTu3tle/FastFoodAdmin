@@ -13,7 +13,8 @@ import {
 import routerProvider from "@pankod/refine-react-router-v6";
 import dataProvider from "@pankod/refine-simple-rest";
 
-import { ProductList } from 'pages/products';
+import { ProductList, ProductShow, ProductCreate } from 'pages/products';
+import { CategoryList, CategoryCreate } from 'pages/category';
 
 const API_URL = "http://localhost:3001";
 const App: React.FC = () => {
@@ -29,14 +30,24 @@ const App: React.FC = () => {
                     Layout={Layout}
                     ReadyPage={ReadyPage}
                     catchAll={<ErrorComponent />}
-                    resources={[{ 
-                        name: "products", 
-                        list: ProductList, 
-                        // show: PostShow, 
-                        // edit: PostEdit, 
-                        // create: PostCreate, 
-                        // canDelete: true 
-                    }]}
+                    resources={[
+                        { 
+                            name: "products", 
+                            list: ProductList, 
+                            show: ProductShow, 
+                            // edit: PostEdit, 
+                            create: ProductCreate, 
+                            // canDelete: true 
+                        },
+                        { 
+                            name: "category", 
+                            list: CategoryList, 
+                            // show: PostShow, 
+                            // edit: PostEdit, 
+                            create: CategoryCreate, 
+                            // canDelete: true 
+                        },
+                    ]}
                 />
             </RefineSnackbarProvider>
         </ThemeProvider>

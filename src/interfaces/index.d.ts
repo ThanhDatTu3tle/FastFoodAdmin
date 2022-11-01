@@ -8,10 +8,10 @@ export interface ICategory {
 // Bảng MONAN - Products
 export interface IProducts {
   maMonAn: string;
+  maDanhMuc: { maDanhMuc: string; };
   tenMonAn: string;
   hinhAnhMonAn: string;
   moTaChiTiet: string;
   giaTien: number;
   yeuThich: boolean;
-  // category: { maDanhMuc: string; };
 }
