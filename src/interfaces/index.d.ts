@@ -5,6 +5,17 @@ export interface ICategory {
   hinhAnh: string;
 }
 
+// Bảng KHACHHANG - Customer
+export interface ICustomer {
+  maKhachHang: string;
+  hoTen: string;
+  ngaySinh: Date;
+  soDienThoai: string;
+  email: string;
+  matKhau: string;
+  hinhAnh: string;
+}
+
 // Bảng MONAN - Products
 export interface IProducts {
   maMonAn: string;
@@ -14,4 +25,12 @@ export interface IProducts {
   moTaChiTiet: string;
   giaTien: number;
   yeuThich: boolean;
+}
+
+// Bảng YKIENKHACHHANG - Feedback
+export interface IFeedback {
+  maYKien: string;
+  maKhachHang: { maKhachHang: string };
+  noiDung: string;
+  danhGia: number;
 }

@@ -1,13 +1,8 @@
-import { HttpError, useApiUrl, useTranslate, IResourceComponentsProps } from "@pankod/refine-core";
+import { HttpError, IResourceComponentsProps } from "@pankod/refine-core";
 import {
     Box,
-    Grid,
-    Stack,
-    FormControl,
-    FormLabel,
     TextField,
     FormHelperText,
-    // Autocomplete,
     useAutocomplete,
     Create,
 } from "@pankod/refine-mui";
@@ -30,95 +25,48 @@ export const CategoryCreate: React.FC<IResourceComponentsProps> = () => {
 
     return (
         <Create saveButtonProps={saveButtonProps}>
-            <form>
-              <Grid
-                container
-                marginTop="8px"
-                sx={{
-                    marginX: { xs: "0px" },
-                    paddingX: { xs: 1, md: 4 },
-                }}
-              >
-                <Grid item xs={12} md={4}>
-                        <Stack gap="24px">
-                            <FormControl>
-                                <FormLabel
-                                    required
-                                    sx={{
-                                        marginBottom: "8px",
-                                        fontWeight: "700",
-                                        fontSize: "14px",
-                                        color: "text.primary",
-                                    }}
-                                >
-                                    {("Mã danh mục")}
-                                </FormLabel>
-                                <TextField
-                                    {...register("maDanhMuc")}
-                                    size="small"
-                                    margin="none"
-                                    variant="outlined"
-                                />
-                                {errors.maDanhMuc && (
-                                    <FormHelperText error>
-                                        {errors.maDanhMuc.message}
-                                    </FormHelperText>
-                                )}
-                            </FormControl>
-                            
-                            <FormControl>
-                                <FormLabel
-                                    required
-                                    sx={{
-                                        marginBottom: "8px",
-                                        fontWeight: "700",
-                                        fontSize: "14px",
-                                        color: "text.primary",
-                                    }}
-                                >
-                                    {("Tên danh mục")}
-                                </FormLabel>
-                                <TextField
-                                    {...register("tenDanhMuc")}
-                                    size="small"
-                                    margin="none"
-                                    variant="outlined"
-                                />
-                                {errors.tenDanhMuc && (
-                                    <FormHelperText error>
-                                        {errors.tenDanhMuc.message}
-                                    </FormHelperText>
-                                )}
-                            </FormControl>
-
-                            <FormControl>
-                                <FormLabel
-                                    required
-                                    sx={{
-                                        marginBottom: "8px",
-                                        fontWeight: "700",
-                                        fontSize: "14px",
-                                        color: "text.primary",
-                                    }}
-                                >
-                                    {("Hình ảnh danh mục")}
-                                </FormLabel>
-                                <TextField
-                                    {...register("hinhAnh")}
-                                    size="small"
-                                    margin="none"
-                                    variant="outlined"
-                                />
-                                {errors.hinhAnh && (
-                                    <FormHelperText error>
-                                        {errors.hinhAnh.message}
-                                    </FormHelperText>
-                                )}
-                            </FormControl>
-                        </Stack>
-                    </Grid>
-              </Grid>
-            </form>
+            <Box
+                component="form"
+                sx={{ display: "flex", flexDirection: "column" }}
+                autoComplete="off"
+            >
+                <TextField
+                    {...register("maDanhMuc", { required: "Mã món ăn là trường bắt buộc!" })}
+                    error={!!errors?.maDanhMuc}
+                    helperText={errors.maDanhMuc?.message}
+                    margin="normal"
+                    required
+                    fullWidth
+                    id="maDanhMuc"
+                    label="Mã danh mục"
+                    name="maDanhMuc"
+                    autoFocus
+                />
+                <TextField
+                    {...register("tenDanhMuc", { required: "Tên danh mục là trường bắt buộc!" })}
+                    error={!!errors?.tenDanhMuc}
+                    helperText={errors.tenDanhMuc?.message}
+                    margin="normal"
+                    required
+                    fullWidth
+                    id="tenDanhMuc"
+                    label="Tên danh mục"
+                    name="tenDanhMuc"
+                    autoFocus
+                />
+                <TextField
+                    {...register("hinhAnh", { required: "Hình ảnh là trường bắt buộc!" })}
+                    error={!!errors?.hinhAnh}
+                    helperText={errors.hinhAnh?.message}
+                    margin="normal"
+                    required
+                    fullWidth
+                    id="hinhAnh"
+                    label="Hình ảnh"
+                    name="hinhAnh"
+                    autoFocus
+                />
+            </Box>
         </Create>
     );
 };
