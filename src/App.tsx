@@ -17,6 +17,7 @@ import { ProductList, ProductShow, ProductCreate } from 'pages/products';
 import { CategoryList, CategoryCreate } from 'pages/category';
 import { CustomerList } from 'pages/customer';
 import { FeedbackList } from 'pages/feedback';
+import { AddressList } from 'pages/address';
 
 const API_URL = "http://localhost:3001";
 const App: React.FC = () => {
@@ -60,6 +61,14 @@ const App: React.FC = () => {
                         { 
                             name: "feedback", 
                             list: FeedbackList, 
+                            // show: PostShow, 
+                            // edit: PostEdit, 
+                            // create: CategoryCreate, 
+                            // canDelete: true 
+                        },
+                        { 
+                            name: "address", 
+                            list: AddressList, 
                             // show: PostShow, 
                             // edit: PostEdit, 
                             // create: CategoryCreate, 

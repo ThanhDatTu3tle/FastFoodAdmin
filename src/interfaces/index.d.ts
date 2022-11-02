@@ -34,3 +34,11 @@ export interface IFeedback {
   noiDung: string;
   danhGia: number;
 }
+
+// Bảng DANHSACHDIACHI - Address
+export interface IAddress {
+  maDiaChi: string;
+  maKhachHang: { maKhachHang: string };
+  diaChi: string;
+  tenDiaChi: number;
+} 
