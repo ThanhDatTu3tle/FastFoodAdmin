@@ -7,6 +7,8 @@ export const ProductShow: React.FC = () => {
     const { queryResult } = useShow<IProducts>();
 
     const { data, isLoading } = queryResult;
+    console.log(queryResult.data)
+
     const record = data?.data;
 
     const { data: categoryData } = useOne<ICategory>({
@@ -29,7 +31,7 @@ export const ProductShow: React.FC = () => {
                     Mã danh mục
                 </Typography>
                 <Typography variant="body2">
-                    {categoryData?.data.tenDanhMuc}
+                    {categoryData?.data.maDanhMuc}
                 </Typography>
 
                 <Typography variant="body1" fontWeight="bold">

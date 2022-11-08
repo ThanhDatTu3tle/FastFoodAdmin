@@ -19,7 +19,7 @@ export interface ICustomer {
 // Bảng MONAN - Products
 export interface IProducts {
   maMonAn: string;
-  maDanhMuc: { maDanhMuc: string; };
+  maDanhMuc: { maDanhMuc: string };
   tenMonAn: string;
   hinhAnhMonAn: string;
   moTaChiTiet: string;

@@ -49,6 +49,23 @@ export const FeedbackList: React.FC = () => {
               const customer = customersData?.data.find(
                   (item) => item.maKhachHang === row.maKhachHang.maKhachHang,
               );
+              return customer?.maKhachHang;
+            },
+        },
+        {
+            field: "maKhachHang.hoTen",
+            headerName: "Tên khách hàng",
+            type: "string",
+            minWidth: 150,
+            flex: 1,
+            renderCell: function render({ row }) {
+              if (isLoading) {
+                  return "Loading...";
+              }
+
+              const customer = customersData?.data.find(
+                  (item) => item.maKhachHang === row.maKhachHang.maKhachHang,
+              );
               return customer?.hoTen;
             },
         },
@@ -64,7 +81,7 @@ export const FeedbackList: React.FC = () => {
         },
         {
             field: "danhGia",
-            headerName: "danhGia",
+            headerName: "Đánh giá",
             type: "number",
             minWidth: 150,
             flex: 1,
