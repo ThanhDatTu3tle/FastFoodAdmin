@@ -32,16 +32,6 @@ const columns: GridColumns<ICustomer> = [
         },
     },
     {
-        field: "ngaySinh",
-        headerName: "Ngày sinh",
-        type: "date",
-        minWidth: 150,
-        flex: 1,
-        renderCell: function render(params) {
-            return <DateField value={params.row.ngaySinh} />;
-        },
-    },
-    {
         field: "soDienThoai",
         headerName: "Số điện thoại",
         type: "string",

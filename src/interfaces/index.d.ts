@@ -9,7 +9,6 @@ export interface ICategory {
 export interface ICustomer {
   maKhachHang: string;
   hoTen: string;
-  ngaySinh: Date;
   soDienThoai: string;
   email: string;
   matKhau: string;
